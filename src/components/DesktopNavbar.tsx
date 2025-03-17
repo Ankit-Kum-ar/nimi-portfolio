@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom"
 
 const DesktopNavbar = () => {
   return (
-    <div className="hidden md:flex items-center space-x-9">
+    <div className="hidden md:flex items-center space-x-9 font-medium">
         <NavLink
             to="/"
             className={({ isActive }) =>
@@ -67,7 +67,7 @@ const DesktopNavbar = () => {
                 : "text-[#284468] hover:text-[#DC702F]"
             }`}
         >
-            <span className="hidden lg:inline">Contact</span>
+            <span className="hidden lg:inline">Contact Us</span>
         </NavLink>
     </div>
   )
