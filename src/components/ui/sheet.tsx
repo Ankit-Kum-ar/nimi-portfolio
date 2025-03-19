@@ -46,11 +46,9 @@ function SheetContent({
   className,
   children,
   side = "right",
-  customStyle,
   ...props
 }: React.ComponentProps<typeof SheetPrimitive.Content> & {
   side?: "top" | "right" | "bottom" | "left"
-  customStyle?: React.CSSProperties
 }) {
   return (
     <SheetPortal>
@@ -69,7 +67,6 @@ function SheetContent({
             "data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom inset-x-0 bottom-0 h-auto border-t",
           className
         )}
-        style={customStyle}
         {...props}
       >
         {children}
@@ -104,17 +101,12 @@ function SheetFooter({ className, ...props }: React.ComponentProps<"div">) {
 
 function SheetTitle({
   className,
-  titleStyle,
   ...props
-}: React.ComponentProps<typeof SheetPrimitive.Title> & {
-  titleStyle?: React.CSSProperties
-}) {
-  
+}: React.ComponentProps<typeof SheetPrimitive.Title>) {
   return (
     <SheetPrimitive.Title
       data-slot="sheet-title"
       className={cn("text-foreground font-semibold", className)}
-      style={titleStyle}
       {...props}
     />
   )
