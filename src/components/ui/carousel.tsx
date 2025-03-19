@@ -1,10 +1,13 @@
 "use client";
 import { IconArrowNarrowRight } from "@tabler/icons-react";
 import { useState, useRef, useId, useEffect } from "react";
+import Bg from "/images/background.png"
+
 
 interface SlideData {
-  title: string;
-  button: string;
+  name: string;
+  place: string;
+  review: string;
   src: string;
 }
 
@@ -62,7 +65,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
     event.currentTarget.style.opacity = "1";
   };
 
-  const { src, button, title } = slide;
+  const { src, name, place, review, } = slide;
 
   return (
     <div className="[perspective:1200px] [transform-style:preserve-3d]">
@@ -84,6 +87,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
         <div
           className="absolute top-0 left-0 w-full h-full bg-[#31456E] rounded-4xl overflow-hidden transition-all duration-150 ease-out"
           style={{
+            opacity: current === index ? 1 : 0.5,
             transform:
               current === index
                 ? "translate3d(calc(var(--x) / 30), calc(var(--y) / 30), 0)"
@@ -95,8 +99,8 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
             style={{
               opacity: current === index ? 1 : 0.5,
             }}
-            alt={title}
-            src={src}
+            alt={name}
+            src={Bg}
             onLoad={imageLoaded}
             loading="eager"
             decoding="sync"
@@ -111,14 +115,20 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
             current === index ? "opacity-100 visible" : "opacity-0 invisible"
           }`}
         >
-          <h2 className="text-lg md:text-2xl lg:text-4xl font-semibold  relative">
-            {title}
-          </h2>
-          <div className="flex justify-center">
-            <button className="mt-6  px-4 py-2 w-fit mx-auto sm:text-sm text-black bg-white h-12 border border-transparent text-xs flex justify-center items-center rounded-2xl hover:shadow-lg transition duration-200 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]">
-              {button}
-            </button>
-          </div>
+            <div className="text-[#C4DAF3] flex flex-col gap-4  p-4 w-full">
+                <div className="top flex flex-row gap-1.5 w-full">
+                    <div className="img-container"><img src={src} alt={name} onLoad={imageLoaded} loading="eager" decoding="sync" className="rounded-full h-12 md:h-16 aspect-square" /></div>
+                    <div className="text flex flex-col ">
+                        <p className="text-sm md:text-lg">{name}</p>
+                        <p className="text-xs md:text-sm">{place}</p>
+                    </div>
+                </div>
+                <div className="review w-full">
+                    <p className="text-sm md:text-lg text-left">{review}</p>
+                </div>
+            </div>
+          
+          
         </article>
       </li>
     </div>
