@@ -6,10 +6,10 @@ interface HomeCardProps {
 
 const HomeCard = ({ imgSrc, title, desc }: HomeCardProps) => {
   return (
-    <div className="flex flex-col justify-center items-center gap-8 w-4/12 min-h-screen z-20">
+    <div className="flex flex-col justify-center items-center md:gap-8 gap-2 md:w-4/12 w-11/12 md:min-h-screen z-20">
         <img src={imgSrc} alt="" />
-        <p className="text-left w-11/12 text-[#1A4272] text-3xl font-bold font-poppins">{title}</p>
-        <p className="text-left w-11/12 pr-8 font-poppins leading-9">{desc}</p>      
+        <p className="text-left md:w-11/12 w-full text-[#1A4272] md:text-3xl text-lg font-bold font-poppins">{title}</p>
+        <p className="text-left md:w-11/12 w-full pr-8 font-poppins md:leading-9">{desc}</p>      
     </div>
   )
 }
