@@ -14,7 +14,7 @@ const Map = () => {
         className="w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] xl:h-[500px] rounded-lg"
       ></iframe>
     </div>
-    <div className="Form-container md:h-[80vh] md:w-[30vw] w-[80vw] relative px-4 md:px-8 py-2 md:absolute md:right-20 bg-[#FFFFFF] rounded-2xl z-10">
+    <div className="Form-container md:h-[80vh] md:w-[30vw] w-[90vw] relative px-4 md:px-8 py-2 md:absolute md:right-20 bg-[#FFFFFF] rounded-2xl z-10">
         <div>
         <h3 className=" pt-4 font-bold text-xl">Get in Touch</h3>
         <p className=" font-normal text-xs">Your Journey to Exceptional Living Starts Here</p></div>
