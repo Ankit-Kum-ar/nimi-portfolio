@@ -1,3 +1,4 @@
+import VisitingcardBanner from "@/components/VisitingcardBanner";
 import bg from "/images/Product-bg.png";
 const Product = () => {
   return (
@@ -7,6 +8,7 @@ const Product = () => {
         <h1 className="text-[#284368] text-5xl font-bold text-left w-full px-10">Our Projects</h1>
         
       </div>
+      <VisitingcardBanner />
     </div>
   )
 }
