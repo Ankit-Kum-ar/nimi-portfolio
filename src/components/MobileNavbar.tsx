@@ -21,10 +21,10 @@ const MobileNavbar = () => {
                 <SheetContent
                     side="right"
                     className="w-[300px]"
-                    customStyle={{ background: 'linear-gradient(135deg, #90BAE9 0%, #284468 100%)', color: '#284468' }}
+                    style={{ background: 'linear-gradient(135deg, #90BAE9 0%, #284468 100%)', color: '#284468' }}
                 >
                     <SheetHeader>
-                        <SheetTitle titleStyle={{ fontSize: "1.25rem", color: "#284468" }}>Menu</SheetTitle>
+                        <SheetTitle className="text-[1.25rem] text-[#284468]">Menu</SheetTitle>
                     </SheetHeader>
                     <nav className="flex flex-col space-y-4 mt-6 text-[#284468]">
                         <Button variant="ghost" className="flex items-center gap-3 justify-start" asChild>
