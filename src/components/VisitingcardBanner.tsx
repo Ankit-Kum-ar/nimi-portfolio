@@ -3,7 +3,7 @@ import BuilderIcon from "/images/BuilderIcon.png"
 import VisitingCard from "./VisitingCard"
 const VisitingcardBanner = () => {
   return (
-    <section className="visitingcardbanner bg-[#1E5AA0] w-full px-10 py-10  ">
+    <section className="visitingcardbanner bg-[#1E5AA0] w-full px-10 py-10 relative">
         <div className="max-w-7xl mx-auto px-4 relative">
             <div className="flex justify-center items-center absolute -top-16 left-10 h-10
             ">
