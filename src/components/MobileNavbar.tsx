@@ -40,9 +40,9 @@ const MobileNavbar = () => {
                             </Link>
                         </Button>
                         <Button variant="ghost" className="flex items-center gap-3 justify-start" asChild>
-                            <Link to="/project" onClick={handleLinkClick}>
+                            <Link to="/product" onClick={handleLinkClick}>
                                 <ShoppingCart className="w-4 h-4" />
-                                Project
+                                Product
                             </Link>
                         </Button>
                         <Button variant="ghost" className="flex items-center gap-3 justify-start" asChild>

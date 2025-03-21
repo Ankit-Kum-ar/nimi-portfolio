@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import ProductCard from "./components/ProductCard";
 import VisitingcardBanner from "@/components/VisitingcardBanner";
 import bg from "/images/Product-bg.png";
-// import gradient from "/images/product-gradient.png";
+import gradient from "/images/product-gradient.png";
 import {
   Pagination,
   PaginationContent,
@@ -59,13 +59,13 @@ const Product = () => {
 
   return (
     <div className="min-h-screen bg-[#90BAE9]/80">
-      <img src={bg} alt="Product-bg" />
-      <div className="flex flex-col min-h-screen relative items-center justify-center py-14">
-        {/* <div className="absolute top-0 left-0 w-full z-0 opacity-70">
+      <img src={bg} alt="Product-bg" className="relative z-20" />
+      <div className="absolute top-0 left-0 w-full z-0 opacity-70 md:block hidden">
           <img src={gradient} alt="" />
-        </div> */}
-        <h1 className="text-[#284368] text-5xl font-bold text-left w-11/12 py-10">Our Projects</h1>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-11/12 z-20 pb-10">
+      </div>
+      <div className="flex flex-col min-h-screen relative items-center justify-center md:py-14 pb-10">
+        <h1 className="text-[#284368] md:text-5xl text-3xl font-bold text-left w-11/12 py-10">Our Projects</h1>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-10/12 z-20 pb-10">
           <AnimatePresence mode="wait" key={currentPage}>
             {renderProductCards()}
           </AnimatePresence>
