@@ -21,26 +21,29 @@ const Footer = () => {
             
             {/* Navigation Links */}
             <div className="section1 flex flex-wrap gap-4">
-              <Link to="/" className="text-lg font-normal">Home</Link>
-              <Link to="/" className="text-lg font-normal">Discussions</Link>
-              <Link to="/" className="text-lg font-normal">Learn</Link>
-              <Link to="/" className="text-lg font-normal">News</Link>
+              <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="text-lg font-normal cursor-pointer hover:text-white">Home</Link>
+              <Link to="/about" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="text-lg font-normal  hover:text-white">About Us</Link>
+              <Link to="/product" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="text-lg font-normal hover:text-white">Products</Link>
+              <Link to="/pffice" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="text-lg font-normal hover:text-white">Office</Link>
             </div>
 
             {/* Support Button */}
-            <div className="section2">
-              <button className="p-2 pl-4 bg-[#C4DAF3] text-[#12243F] rounded-full text-center items-center flex gap-4">
-                Support
-                <div className="aspect-square p-2 bg-[#12243F] text-[#C4DAF3] rounded-full">
+            <Link to="/contact" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="section2 ">
+           
+              <button className="p-2 pl-4 bg-[#C4DAF3] text-[#12243F] rounded-full text-center items-center flex gap-4 cursor-pointer">
+                Contact Us
+                <div className="aspect-square p-2 bg-[#12243F] text-[#C4DAF3] rounded-full hover:text-[#C4DAF3] hover:bg-[#414F64]">
                   <ArrowUpRight />
                 </div>
               </button>
-            </div>
+            </Link>
 
             {/* Scroll to Top Icon */}
-            <div className="section3 bg-[#C4DAF3] text-[#12243F] rounded-full p-4">
+            <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+             className="section3 bg-[#C4DAF3] text-[#12243F] rounded-full p-4 cursor-pointer hover:text-[#C4DAF3] hover:bg-[#414F64]">
               <MoveUp />
-            </div>
+            </button>
           </div>
         </div>
 
@@ -48,9 +51,9 @@ const Footer = () => {
         <div className="footer-lower flex flex-col md:flex-row justify-between w-full gap-6">
           
           {/* Company Info */}
-          <div className="footer-lower-left text-center md:text-left">
-            <h3 className="text-4xl md:text-5xl">NIMI DEVELOPERS</h3>
-            <h2 className="text-5xl md:text-7xl">PRIVATE LIMITED</h2>
+          <div className="footer-lower-left text-left md:text-left">
+            <h3 className="text-3xl md:text-5xl">NIMI DEVELOPERS</h3>
+            <h2 className="text-4xl md:text-7xl">PRIVATE LIMITED</h2>
           </div>
 
           {/* Social Icons */}

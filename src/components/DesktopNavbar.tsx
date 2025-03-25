@@ -5,6 +5,7 @@ const DesktopNavbar = () => {
     <div className="hidden md:flex items-center space-x-9 font-medium">
         <NavLink
             to="/"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className={({ isActive }) =>
             `nav-item flex items-center gap-2 transition-transform duration-300 font-poppins ${
                 isActive
@@ -16,6 +17,7 @@ const DesktopNavbar = () => {
         </NavLink>
         <NavLink
             to="/about"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className={({ isActive }) =>
             `nav-item flex items-center gap-2 transition-transform duration-300 font-poppins ${
                 isActive
@@ -27,6 +29,7 @@ const DesktopNavbar = () => {
         </NavLink>
         <NavLink
             to="/product"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className={({ isActive }) =>
             `nav-item flex items-center gap-2 transition-transform duration-300 font-poppins ${
                 isActive
@@ -38,6 +41,7 @@ const DesktopNavbar = () => {
         </NavLink>
         <NavLink
             to="/office"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className={({ isActive }) =>
             `nav-item flex items-center gap-2 transition-transform duration-300 font-poppins ${
                 isActive
@@ -49,6 +53,7 @@ const DesktopNavbar = () => {
         </NavLink>
         <NavLink
             to="/people"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className={({ isActive }) =>
             `nav-item flex items-center gap-2 transition-transform duration-300 font-poppins ${
                 isActive
@@ -60,6 +65,7 @@ const DesktopNavbar = () => {
         </NavLink>
         <NavLink
             to="/contact"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className={({ isActive }) =>
             `nav-item flex items-center gap-2 transition-transform duration-300 font-poppins ${
                 isActive
