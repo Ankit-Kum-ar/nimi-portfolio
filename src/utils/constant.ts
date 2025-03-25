@@ -30,3 +30,46 @@ export const productData = [
         location: "Patna"
     }
 ]
+
+export const peopleData = [
+    {
+        index: 1,
+        title: "Ms. Aranta Katiyar",
+        src: "/images/P1.jpeg"
+    },
+    {
+        index: 2,
+        title: "Mr. Anil Kumar",
+        src: "/images/P2.jpg"
+    },
+    {
+        index: 3,
+        title: "Mr. Anil Kumar",
+        src: "/images/P3.jpg"
+    },
+    {
+        index: 4,
+        title: "Mr. Anil Kumar",
+        src: "/images/P4.jpg"
+    },
+    {
+        index: 5,
+        title: "Mr. Anil Kumar",
+        src: "/images/P5.jpg"
+    },
+    {
+        index: 6,
+        title: "Mr. Anil Kumar",
+        src: "/images/P6.jpg"
+    },
+    {
+        index: 7,
+        title: "Mr. Anil Kumar",
+        src: "/images/P7.jpeg"
+    },
+    {
+        index:8,
+        title: "Mr. Anil Kumar",
+        src: "/images/P8.jpeg"
+    }, 
+]
