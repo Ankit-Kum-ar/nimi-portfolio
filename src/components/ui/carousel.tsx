@@ -1,7 +1,6 @@
 "use client";
 import { IconArrowNarrowRight } from "@tabler/icons-react";
 import { useState, useRef, useId, useEffect } from "react";
-import Bg from "/images/background.png"
 
 
 interface SlideData {
