@@ -35,41 +35,41 @@ export const peopleData = [
     {
         index: 1,
         title: "Ms. Aranta Katiyar",
-        src: "/images/P1.jpeg"
+        src: "/images/P1.jpg"
     },
     {
         index: 2,
-        title: "Mr. Anil Kumar",
+        title: "Ms. Pragati Singh",
         src: "/images/P2.jpg"
     },
     {
         index: 3,
-        title: "Mr. Anil Kumar",
+        title: "Mr. Vikas Singh",
         src: "/images/P3.jpg"
     },
     {
         index: 4,
-        title: "Mr. Anil Kumar",
+        title: "Mr. Dev Tanwar",
         src: "/images/P4.jpg"
     },
     {
         index: 5,
-        title: "Mr. Anil Kumar",
+        title: "Ms. Rishika Rai",
         src: "/images/P5.jpg"
     },
     {
         index: 6,
-        title: "Mr. Anil Kumar",
+        title: "Mr. Ankit Kumar",
         src: "/images/P6.jpg"
     },
     {
         index: 7,
-        title: "Mr. Anil Kumar",
-        src: "/images/P7.jpeg"
+        title: "Mr. Prince Kumar",
+        src: "/images/P7.jpg"
     },
     {
         index:8,
-        title: "Mr. Anil Kumar",
-        src: "/images/P8.jpeg"
+        title: "Mr. Shubham Kumar",
+        src: "/images/P8.jpg"
     }, 
 ]
