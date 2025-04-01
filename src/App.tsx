@@ -5,6 +5,8 @@ import Home from "./Pages/Home/Home"
 import Product from "./Pages/Product/Product"
 import Contact from "./Pages/ContactUs/Contact"
 import People from "./Pages/People/People"
+import AboutUs from "./Pages/AboutUs/AboutUs"
+import PersonDetails from "./Pages/People/components/PersonDetails"
 
 function App() {
   return (
@@ -12,8 +14,10 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<AboutUs />} />
         <Route path="/product" element={<Product />} />
         <Route path="/people" element={<People />} />
+        <Route path="/people/:id" element={<PersonDetails />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
