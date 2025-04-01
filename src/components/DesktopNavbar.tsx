@@ -75,6 +75,7 @@ const DesktopNavbar = () => {
         >
             <span className="hidden lg:inline">Contact Us</span>
         </NavLink>
+        
     </div>
   )
 }
