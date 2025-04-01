@@ -11,44 +11,43 @@ const cityIframes: Record<string, string> = {
 };
 
 const CityMap: React.FC = () => {
-  const [selectedCity, setSelectedCity] = useState<string>('delhi');
+  const [selectedCity, setSelectedCity] = useState<string>('DL'); // Default to Delhi
 
   const handleLocationChange = (city: string) => {
     setSelectedCity(city);
   };
 
   return (
-    <div className="relative h-screen w-full">
-        <div className='absolute top-10 left-0 w-full h-full bg-transparent bg-opacity-50 z-10'>
+    <div className="flex flex-col h-screen w-full">
+      {/* Form Section */}
+      <div className="flex-shrink-0 p-4 md:p-0 bg-[#F0F4FA]">
         <Form />
-        </div>
-        
-      <iframe
-        src={cityIframes[selectedCity]}
-        className="h-full w-full border-0"
-        loading="lazy"
-        allowFullScreen
-        referrerPolicy="no-referrer-when-downgrade"
-      >
-
-        
-      </iframe>
-
-      
-
-      <div className="absolute left-20 flex flex-col z-20 gap-2 top-10">
-        {Object.keys(cityIframes).map((city) => (
-          <button
-            key={city}
-            onClick={() => handleLocationChange(city)}
-            className="bg-[#284368] text-[#C4DAF3] text-2xl font-extrabold p-2 md:p-4 rounded-full aspect-square cursor-pointer"
-          >
-            {city.charAt(0).toUpperCase() + city.slice(1)}
-          </button>
-        ))}
-        
       </div>
-      
+
+      {/* Map Section */}
+      <div className="flex-grow relative">
+        <iframe
+          src={cityIframes[selectedCity]}
+          className="h-full w-full border-0"
+          loading="lazy"
+          allowFullScreen
+          referrerPolicy="no-referrer-when-downgrade"
+        >
+        </iframe>
+
+        {/* Buttons Section */}
+        <div className="absolute bottom-4 left-0 right-0 flex flex-row md:flex-col gap-2 overflow-x-auto px-15 justify-center md:justify-start">
+          {Object.keys(cityIframes).map((city) => (
+            <button
+              key={city}
+              onClick={() => handleLocationChange(city)}
+              className="bg-[#284368] text-[#C4DAF3] text-xs md:text-lg font-bold w-8 h-8 md:w-16 md:h-16 rounded-full cursor-pointer flex items-center justify-center"
+            >
+              {city.charAt(0).toUpperCase() + city.slice(1)}
+            </button>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
