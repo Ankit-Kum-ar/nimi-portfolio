@@ -81,3 +81,16 @@ export const peopleData = [
         description: "Shubham Kumar is a motivated and ambitious professional in the real estate sector. With a background in finance and investment analysis, he has a keen understanding of market dynamics. Shubham is known for his analytical skills and ability to identify profitable opportunities. His dedication to continuous learning and his passion for the industry make him a rising star in the real estate community."
     }, 
 ]
+
+export const aboutDescription = "Welcome to NIMI DEVELOPERS, where we turn your real estate dreams into reality. With a commitment to excellence, integrity, and personalized service, we specialize in helping buyers, sellers, and investors navigate the dynamic real estate market with confidence."
+
+export const aboutCardData = [
+    {
+        title: "Our Mission",
+        description: "Our mission is simple: to provide exceptional real estate services that put your needs first. We strive to exceed your expectations and deliver results that matter."
+    },
+    {
+        title: "Our Vision",
+        description: "To provide quality homes and construction that exceeds the expexpectations of our esteemed natnational and ininternational cuscustomers."
+    }
+]
