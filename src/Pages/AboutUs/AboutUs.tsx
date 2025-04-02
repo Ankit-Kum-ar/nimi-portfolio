@@ -1,6 +1,7 @@
 import Heading from "@/components/Heading"
 import Hero from "./components/Hero"
 import Banner from "./components/Banner"
+import Gallery from "./components/Gallery"
 
 const AboutUs = () => {
   return (
@@ -8,6 +9,7 @@ const AboutUs = () => {
       <Heading title="About Us" />
       <Hero />
       <Banner />
+      <Gallery />
     </div>
   )
 }
