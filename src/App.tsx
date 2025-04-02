@@ -8,6 +8,7 @@ import People from "./Pages/People/People"
 import AboutUs from "./Pages/AboutUs/AboutUs"
 import PersonDetails from "./Pages/People/components/PersonDetails"
 import Office from "./Pages/Offices/Office"
+import News from "./Pages/News/News"
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/people/:id" element={<PersonDetails />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/office" element={<Office />} />
+        <Route path="/news" element={<News />} />
       </Routes>
       <Footer />
     </>
