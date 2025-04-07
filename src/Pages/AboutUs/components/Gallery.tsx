@@ -7,9 +7,6 @@ interface Image {
   src: string;
 }
 
-<<<<<<< HEAD
-export default Gallery
-=======
 const images: Image[] = [
   {
     src: "https://plus.unsplash.com/premium_photo-1689609950112-d66095626efb?w=1000&auto=format&fit=crop&q=60",
@@ -96,4 +93,3 @@ const Gallery: React.FC = () => {
 };
 
 export default Gallery;
->>>>>>> 015a315b693800967451f9d7a57c4c70f74a397f
