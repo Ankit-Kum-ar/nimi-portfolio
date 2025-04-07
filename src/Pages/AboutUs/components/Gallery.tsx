@@ -9,34 +9,34 @@ interface Image {
 
 const images: Image[] = [
   {
-    src: "https://plus.unsplash.com/premium_photo-1689609950112-d66095626efb?w=1000&auto=format&fit=crop&q=60",
+    src: "/images/G-0.png",
   },
   {
-    src: "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=1000&auto=format&fit=crop&q=60",
+    src: "/images/G-3.png",
   },
   {
-    src: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=1000&auto=format&fit=crop&q=60",
+    src: "/images/G-5.png",
   },
   {
-    src: "https://plus.unsplash.com/premium_photo-1661964014750-963a28aeddea?w=1000&auto=format&fit=crop&q=60",
+    src: "/images/G-8.png",
   },
   {
-    src: "https://plus.unsplash.com/premium_photo-1661964014750-963a28aeddea?w=1000&auto=format&fit=crop&q=60",
+    src: "/images/G-9.png",
   },
   {
-    src: "https://plus.unsplash.com/premium_photo-1661964014750-963a28aeddea?w=1000&auto=format&fit=crop&q=60",
+    src: "/images/G-1.png",
   },
   {
-    src: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1000&auto=format&fit=crop&q=60",
+    src: "/images/G-4.png",
   },
   {
-    src: "https://plus.unsplash.com/premium_photo-1676321688594-7c2e60a70de1?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fEhvbWV8ZW58MHx8MHx8fDA%3D",
+    src: "/images/G-6.png",
   },
   {
-    src: "https://images.unsplash.com/photo-1505691723518-36a5ac3be353?w=1000&auto=format&fit=crop&q=60",
+    src: "/images/G-7.png",
   },
   {
-    src: "https://images.unsplash.com/photo-1556020685-ae41abfc9365?w=1000&auto=format&fit=crop&q=60",
+    src: "/images/G-5.png",
   },
 ];
 

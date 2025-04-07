@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom"
+import { Toaster } from "react-hot-toast"
 import Footer from "./components/Footer"
 import Navbar from "./components/Navbar"
 import Home from "./Pages/Home/Home"
@@ -24,6 +25,7 @@ function App() {
         <Route path="/office" element={<Office />} />
         <Route path="/news" element={<News />} />
       </Routes>
+      <Toaster />
       <Footer />
     </>
   )
