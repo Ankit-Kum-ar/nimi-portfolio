@@ -12,9 +12,20 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
-import { productData } from "@/utils/constant";
+import { useSelector } from "react-redux";
+import { RootState } from "@/redux/store";
 
 const Product = () => {
+    const productData = useSelector((state: RootState) => state.product.productData) as Array<{
+        title: string;
+        src: string;
+        description: string;
+        location: string;
+        id: number;
+    }>;
+
+
+
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 3;
 
@@ -36,7 +47,12 @@ const Product = () => {
         exit={{ opacity: 0, x: -100 }}
         transition={{ duration: 0.5 }}
       >
-        <ProductCard title={product.title} description={product.description} location={product.location} />
+        <ProductCard src={product.src}  title={product.title} description={product.description} location={product.location} id={product.id} />
+
+
+
+
+
       </motion.div>
     ));
   };
@@ -58,18 +74,24 @@ const Product = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#90BAE9]/80">
-      <img src={bg} alt="Product-bg" className="relative z-20" />
+    <div className="min-h-screen bg-[#90BAE9]/80 ">
+      {/* <img src={bg} alt="Product-bg" className="relative z-20" /> */}
       <div className="absolute top-0 left-0 w-full z-0 opacity-70 md:block hidden">
-          <img src={gradient} alt="" />
+        <img src={gradient} className="w-full h-[150vh]" alt="" />
       </div>
-      <div className="flex flex-col min-h-screen relative items-center justify-center md:py-14 pb-10">
+
+      <div className="flex flex-col min-h-screen relative items-center w-full justify-center md:py-14 pb-10">
         <h1 className="text-[#284368] md:text-5xl text-3xl font-bold text-left w-11/12 py-10">Our Projects</h1>
+
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-10/12 z-20 pb-10">
           <AnimatePresence mode="wait" key={currentPage}>
             {renderProductCards()}
           </AnimatePresence>
         </div>
+
+
+        
         <div className="w-11/12 flex justify-end z-20 pb-10">
           <Pagination>
             <PaginationContent>

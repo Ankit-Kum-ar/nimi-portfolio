@@ -8,8 +8,35 @@ import People from "./Pages/People/People"
 import AboutUs from "./Pages/AboutUs/AboutUs"
 import PersonDetails from "./Pages/People/components/PersonDetails"
 import Office from "./Pages/Offices/Office"
+import ProductDetails from "./Pages/Product/components/ProductDetails"
+import { useEffect } from "react"
+import { useDispatch } from "react-redux"
+import { addProductData } from "./redux/slices/productSlice"
+
+
+
 
 function App() {
+
+    const dispatch = useDispatch()
+    
+    useEffect(() => {
+      fetch("https://api.sheetbest.com/sheets/c0395f84-a71c-482e-a914-e8136e51f495")
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then(data => {
+          const reversedData = data.reverse(); 
+          dispatch(addProductData(reversedData));
+        })
+        .catch(error => {
+          console.error('Error fetching data: ', error);
+        });
+    }, [dispatch]);
+    
   return (
     <>
       <Navbar />
@@ -17,6 +44,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/product" element={<Product />} />
+        <Route path="/product/:id" element={<ProductDetails />} />
+
         <Route path="/people" element={<People />} />
         <Route path="/people/:id" element={<PersonDetails />} />
         <Route path="/contact" element={<Contact />} />
