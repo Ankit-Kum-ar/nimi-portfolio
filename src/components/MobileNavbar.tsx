@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet"
 import { Button } from "./ui/button"
 import { useState } from "react";
-import { BookOpenText, Contact, HomeIcon, LampDesk, MenuIcon, ShoppingCart, Users } from "lucide-react";
+import { BookOpenText, Contact, HomeIcon, LampDesk, MenuIcon, Newspaper, ShoppingCart, Users } from "lucide-react";
 
 const MobileNavbar = () => {
     const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -26,7 +26,7 @@ const MobileNavbar = () => {
                     <SheetHeader>
                         <SheetTitle className="text-[1.25rem] text-[#284468]">Menu</SheetTitle>
                     </SheetHeader>
-                    <nav className="flex flex-col space-y-4 mt-6 text-[#284468]">
+                    <nav className="flex flex-col space-y-4 mt-6 text-[#192e56]">
                         <Button variant="ghost" className="flex items-center gap-3 justify-start" asChild>
                             <Link to="/" onClick={handleLinkClick}>
                                 <HomeIcon className="w-4 h-4" />
@@ -61,6 +61,12 @@ const MobileNavbar = () => {
                             <Link to="/contact" onClick={handleLinkClick}>
                                 <Contact className="w-4 h-4" />
                                 Contact Us
+                            </Link>
+                        </Button>
+                        <Button variant="ghost" className="flex items-center gap-3 justify-start" asChild>
+                            <Link to="/news" onClick={handleLinkClick}>
+                                <Newspaper className="w-4 h-4" />
+                                News
                             </Link>
                         </Button>
                     </nav>

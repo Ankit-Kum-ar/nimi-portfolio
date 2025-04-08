@@ -41,6 +41,7 @@ const Footer = () => {
             {/* Scroll to Top Icon */}
             <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            title="Scroll to top"
              className="section3 bg-[#C4DAF3] text-[#12243F] rounded-full p-4 cursor-pointer hover:text-[#C4DAF3] hover:bg-[#414F64]">
               <MoveUp />
             </button>

@@ -7,7 +7,7 @@ interface HeadingProps {
 const Heading:React.FC<HeadingProps> = ({ title })=> {
   return (
     <div
-      className="w-full flex items-center justify-start bg-[url('/images/backdrop.jpeg')] bg-repeat-x object-contain text-[#284368] md:h-28 h-20 md:text-5xl text-3xl font-semibold font-poppins max-w-7xl mx-auto px-4"
+      className="w-full h-full bg-cover bg-center flex items-center justify-center bg-no-repeat bg-[url('/images/backdrop.jpeg')] text-[#284368] md:h-28 h-20 md:text-5xl text-3xl font-semibold font-poppins"
     >
       {title}
     </div>

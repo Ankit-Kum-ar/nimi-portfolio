@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom"
+import { Toaster } from "react-hot-toast"
 import Footer from "./components/Footer"
 import Navbar from "./components/Navbar"
 import Home from "./Pages/Home/Home"
@@ -15,6 +16,7 @@ import { addProductData } from "./redux/slices/productSlice"
 
 
 
+import News from "./Pages/News/News"
 
 function App() {
 
@@ -50,7 +52,9 @@ function App() {
         <Route path="/people/:id" element={<PersonDetails />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/office" element={<Office />} />
+        <Route path="/news" element={<News />} />
       </Routes>
+      <Toaster />
       <Footer />
     </>
   )
