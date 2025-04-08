@@ -15,6 +15,7 @@ const RealEstateNews: React.FC = () => {
   const [articles, setArticles] = useState<NewsArticle[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [loading, setLoading] = useState<boolean>(true);
+  const [isMobile, setIsMobile] = useState<boolean>(false); // State to track screen size
 
   const loadNews = async (category: string) => {
     setLoading(true);
@@ -27,9 +28,24 @@ const RealEstateNews: React.FC = () => {
     setLoading(false);
   };
 
+  // Detect screen size
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // Mobile screen size threshold
+    };
+
+    handleResize(); // Check on initial render
+    window.addEventListener("resize", handleResize); // Add resize listener
+
+    return () => window.removeEventListener("resize", handleResize); // Cleanup listener
+  }, []);
+
   useEffect(() => {
     loadNews(selectedCategory);
   }, [selectedCategory]);
+
+  // Limit articles to 7 on mobile screens
+  const displayedArticles = isMobile ? articles.slice(0, 7) : articles;
 
   return (
     <section className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -48,7 +64,7 @@ const RealEstateNews: React.FC = () => {
         </div>
       ) : (
         <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-          {articles.map((article, idx) => (
+          {displayedArticles.map((article, idx) => (
             <NewsCard key={idx} article={article} />
           ))}
         </div>

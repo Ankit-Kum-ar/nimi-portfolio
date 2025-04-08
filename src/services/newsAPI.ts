@@ -11,7 +11,7 @@ export const fetchNewsByCategory = async (category: string = "") => {
   };
 
   const query = categories[category] || categories.all;
-  const url = `${BASE_URL}?q=${encodeURIComponent(query)}&apiKey=${API_KEY}&language=en&sortBy=publishedAt&pageSize=9`;
+  const url = `${BASE_URL}?q=${encodeURIComponent(query)}&apiKey=${API_KEY}&language=en&sortBy=publishedAt&pageSize=10`;
 
   const response = await fetch(url);
   if (!response.ok) throw new Error("Failed to fetch news");
