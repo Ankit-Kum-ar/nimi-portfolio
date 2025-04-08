@@ -6,7 +6,7 @@ import { Loader } from "lucide-react"; // Import Loader
 const Form = () => {
   const formRef = useRef<HTMLFormElement>(null);
   const [loading, setLoading] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+  // Removed unused 'submitted' state
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -25,10 +25,10 @@ const Form = () => {
       .then(
         () => {
           setLoading(false);
-          setSubmitted(true);
+          // Removed unused 'setSubmitted'
           formRef.current?.reset();
           toast.success("Message sent successfully!"); // Success toast
-          setTimeout(() => setSubmitted(false), 4000); // Reset message after 4s
+          // Removed unused 'setSubmitted' timeout
         },
         (error) => {
           setLoading(false);
