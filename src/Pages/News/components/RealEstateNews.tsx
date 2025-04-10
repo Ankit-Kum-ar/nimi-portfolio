@@ -21,6 +21,7 @@ const RealEstateNews: React.FC = () => {
     setLoading(true);
     try {
       const news = await fetchNewsByCategory(category);
+      console.log(news);
       setArticles(news);
     } catch (error) {
       console.error(error);
