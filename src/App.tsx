@@ -15,6 +15,7 @@ import { useDispatch } from "react-redux"
 import { addProductData } from "./redux/slices/productSlice"
 import News from "./Pages/News/News"
 import ScrollToTop from "./components/ScrollToTop"
+import Title from "./components/Title"
 
 function App() {
 
@@ -39,6 +40,7 @@ function App() {
     
   return (
     <>
+      <Title title="Nimi Developers" />
       <ScrollToTop />
       <Navbar />
       <Routes>
