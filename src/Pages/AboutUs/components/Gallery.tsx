@@ -56,7 +56,7 @@ const Gallery: React.FC = () => {
       </h1>
 
       {/* Masonry Grid Layout */}
-      <div className="columns-2 md:columns-3 lg:columns-4 ">
+      <div className="columns-2 md:columns-3 lg:columns-4 gap-2 space-y-2 ">
         {images.map((image, i) => (
           <AnimatedContent
             key={i}
