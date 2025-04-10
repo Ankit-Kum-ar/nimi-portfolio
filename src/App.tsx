@@ -13,10 +13,8 @@ import ProductDetails from "./Pages/Product/components/ProductDetails"
 import { useEffect } from "react"
 import { useDispatch } from "react-redux"
 import { addProductData } from "./redux/slices/productSlice"
-
-
-
 import News from "./Pages/News/News"
+import ScrollToTop from "./components/ScrollToTop"
 
 function App() {
 
@@ -41,6 +39,7 @@ function App() {
     
   return (
     <>
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

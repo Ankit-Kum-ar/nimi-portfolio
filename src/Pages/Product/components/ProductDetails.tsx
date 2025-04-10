@@ -26,13 +26,11 @@ type Product = {
 
 export default function ProductDetailPage() {
   const productData = useSelector((state: RootState) => state.product.productData) as Array<Product>;
-  console.log(productData);
 
   const { id: productId } = useParams<{ id: string }>();
   
 
   const product = productData.find((item) => item.id === productId);
-  console.log(product);
 
   if (!product) {
     return (
