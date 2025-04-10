@@ -2,7 +2,7 @@
 import { Link, useParams } from "react-router-dom";
 import gradient from "/images/product-gradient.png";
 import ProductCard from "./ProductCard";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 
