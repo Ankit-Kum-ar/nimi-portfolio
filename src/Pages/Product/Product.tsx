@@ -2,7 +2,6 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ProductCard from "./components/ProductCard";
 import VisitingcardBanner from "@/components/VisitingcardBanner";
-import bg from "/images/Product-bg.png";
 import gradient from "/images/product-gradient.png";
 import {
   Pagination,
