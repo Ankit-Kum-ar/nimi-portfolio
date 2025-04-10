@@ -7,15 +7,25 @@ export const fetchNewsByCategory = async (category: string = "") => {
     property: `"property market"`,
     finance: `"housing finance"`,
     design: `"home design"`,
-    investment: `"real estate investment"`
+    investment: `"real estate investment"`,
   };
 
   const query = categories[category] || categories.all;
-  const url = `${BASE_URL}?q=${encodeURIComponent(query)}&apiKey=${API_KEY}&language=en&sortBy=publishedAt&pageSize=10`;
+  const url = `${BASE_URL}?q=${encodeURIComponent(query)}&apiKey=${API_KEY}&language=en&sortBy=publishedAt&pageSize=9`;
 
-  const response = await fetch(url);
-  if (!response.ok) throw new Error("Failed to fetch news");
+  try {
+    const response = await fetch(url);
 
-  const data = await response.json();
-  return data.articles;
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error("Error fetching news:", errorData);
+      throw new Error(`Failed to fetch news: ${errorData.message || response.statusText}`);
+    }
+
+    const data = await response.json();
+    return data.articles;
+  } catch (error) {
+    console.error("Error:", error);
+    throw new Error("Failed to fetch news. Please try again later.");
+  }
 };
