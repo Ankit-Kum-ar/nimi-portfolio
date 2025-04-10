@@ -11,7 +11,7 @@ export const fetchNewsByCategory = async (category: string = "") => {
   };
 
   const query = categories[category] || categories.all;
-  const url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(query)}&apiKey=${API_KEY}&language=en&sortBy=publishedAt&pageSize=9`;
+  const url = `https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/everything?q=${encodeURIComponent(query)}&apiKey=${API_KEY}&language=en&sortBy=publishedAt&pageSize=9`;
 
   try {
     const response = await fetch(url);
