@@ -1,37 +1,66 @@
 import React from "react";
 
-type NewsArticle = {
-  title: string;
-  url: string;
-  urlToImage: string;
-  description: string;
+type Props = {
+  article: {
+    title: string;
+    url: string;
+    image: string; // GNews uses `image`
+    description: string;
+    publishedAt: string; // Published date
+    source: {
+      name: string; // Source name
+      url: string; // Source URL
+    };
+  };
 };
 
-const NewsCard: React.FC<{ article: NewsArticle }> = ({ article }) => {
+const NewsCard: React.FC<Props> = ({ article }) => {
   return (
-    <a
-      href={article.url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="bg-[#F0F4FA] rounded-xl shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 flex flex-col"
-    >
-      {/* Image Section */}
+    <div className="bg-white shadow-md rounded-lg overflow-hidden">
+      {/* Article Image */}
       <img
-        src={article.urlToImage || "/images/placeholder.png"} // Fallback image
-        alt="news"
-        className="h-48 w-full object-cover sm:h-56"
+        src={article.image}
+        alt={article.title}
+        className="w-full h-48 object-cover"
       />
 
-      {/* Content Section */}
-      <div className="p-4 flex flex-col justify-between flex-grow">
-        <h3 className="font-bold text-base sm:text-lg mb-2 line-clamp-2 text-[#1B4C89]">
-          {article.title}
-        </h3>
-        <p className="text-sm sm:text-base text-gray-600 line-clamp-3">
-          {article.description?.slice(0, 100) || "No description available."}...
+      {/* Article Content */}
+      <div className="p-4">
+        {/* Title */}
+        <h2 className="text-lg font-bold text-[#1B4C89] mb-2">{article.title}</h2>
+
+        {/* Description */}
+        <p className="text-gray-600 text-sm mb-4">{article.description}</p>
+
+        {/* Published Date */}
+        <p className="text-gray-500 text-xs mb-2">
+          Published on: {new Date(article.publishedAt).toLocaleDateString()}
         </p>
+
+        {/* Source */}
+        <p className="text-gray-500 text-xs mb-4">
+          Source:{" "}
+          <a
+            href={article.source.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#1B4C89] font-medium hover:underline"
+          >
+            {article.source.name}
+          </a>
+        </p>
+
+        {/* Read More Link */}
+        <a
+          href={article.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#1B4C89] font-medium hover:underline"
+        >
+          Read More
+        </a>
       </div>
-    </a>
+    </div>
   );
 };
 

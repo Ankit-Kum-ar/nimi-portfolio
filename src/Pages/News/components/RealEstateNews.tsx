@@ -2,20 +2,25 @@ import React, { useEffect, useState } from "react";
 import NewsCard from "../components/NewsCard";
 import NewsFilter from "../components/NewsFilter";
 import { fetchNewsByCategory } from "@/services/newsAPI";
-import { Loader } from "lucide-react"; // Import the Loader component
+import { Loader } from "lucide-react";
 
 type NewsArticle = {
   title: string;
   url: string;
-  urlToImage: string;
+  image: string; // GNews uses `image` instead of `urlToImage`
   description: string;
+  publishedAt: string; // Optional: If you want to display the published date
+  source: {
+    name: string; // Source name
+    url: string; // Source URL
+  };
 };
 
 const RealEstateNews: React.FC = () => {
   const [articles, setArticles] = useState<NewsArticle[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [loading, setLoading] = useState<boolean>(true);
-  const [isMobile, setIsMobile] = useState<boolean>(false); // State to track screen size
+  const [isMobile, setIsMobile] = useState<boolean>(false);
 
   const loadNews = async (category: string) => {
     setLoading(true);
@@ -32,13 +37,13 @@ const RealEstateNews: React.FC = () => {
   // Detect screen size
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); // Mobile screen size threshold
+      setIsMobile(window.innerWidth <= 768);
     };
 
-    handleResize(); // Check on initial render
-    window.addEventListener("resize", handleResize); // Add resize listener
+    handleResize();
+    window.addEventListener("resize", handleResize);
 
-    return () => window.removeEventListener("resize", handleResize); // Cleanup listener
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   useEffect(() => {
