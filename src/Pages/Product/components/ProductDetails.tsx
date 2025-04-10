@@ -4,13 +4,14 @@ import ProductCard from "./ProductCard";
 import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
+import { Loader } from "lucide-react";
 
 type Product = {
   title: string;
   src: string;
   description: string;
   location: string;
-  id: number;
+  id: string;
   amenities_list: string;
   community_list: string;
   planning: string;
@@ -36,7 +37,7 @@ export default function ProductDetailPage() {
   if (!product) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <h1 className="text-2xl font-bold text-[#284368]">Product not found</h1>
+        <Loader className="animate-spin w-10 h-10 text-[#284368]" />
       </div>
     );
   }

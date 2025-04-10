@@ -20,7 +20,7 @@ const Product = () => {
         src: string;
         description: string;
         location: string;
-        id: number;
+        id: string;
     }>;
 
 
