@@ -45,7 +45,7 @@ const About = () => {
         <div className="flex flex-col md:flex-row md:gap-5 gap-2 max-w-7xl mx-auto">
             <div className="left flex flex-col aspect-square md:gap-5 gap-2 md:w-[50%]">
                 <div className="top bg-[#1E5AA0] text-white rounded-3xl md:rounded-4xl p-4 md:p-4 relative md:h-[50%]">
-                    <h4 className="text-lg md:text-xl lg:text-2xl font-normal ">ABOUT US</h4>
+                    <h4 className="text-lg md:text-xl lg:text-2xl font-normal px-2 ">ABOUT US</h4>
                     <p className="w-[85%] xl:w-[90%] text-xs md:text-xs lg:text-sm xl:text-lg font-light pb-8 text-justify p-2">  Where we turn your real estate dreams into reality.
                          With a commitment to excellence, integrity, and 
                          personalized service, we specialize in helping 

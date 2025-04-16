@@ -37,20 +37,9 @@ const DesktopNavbar = () => {
                 : "text-[#284468] hover:text-[#DC702F]"
             }`}
         >
-            <span className="hidden lg:inline">Products</span>
+            <span className="hidden lg:inline">Projects</span>
         </NavLink>
-        <NavLink
-            to="/office"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className={({ isActive }) =>
-            `nav-item flex items-center gap-2 transition-transform duration-300 font-poppins ${
-                isActive
-                ? "text-[#DC702F] border-b-2 border-[#DC702F] scale-110"
-                : "text-[#284468] hover:text-[#DC702F]"
-            }`}
-        >
-            <span className="hidden lg:inline">Office</span>
-        </NavLink>
+        
         <NavLink
             to="/people"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
@@ -61,7 +50,7 @@ const DesktopNavbar = () => {
                 : "text-[#284468] hover:text-[#DC702F]"
             }`}
         >
-            <span className="hidden lg:inline">People</span>
+            <span className="hidden lg:inline">Team</span>
         </NavLink>
         <NavLink
             to="/contact"

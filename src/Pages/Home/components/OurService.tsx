@@ -9,7 +9,7 @@ const OurService = () => {
   return (
     <section className="bg-[#90BAE9]/80 w-full relative pt-10">
         <div className="flex w-11/12 mx-auto justify-between items-center">
-            <div className="flex md:w-3/12 w-9/12 text-[#1A4272] font-poppins md:text-5xl text-3xl font-semibold z-20">
+            <div className="px-10 flex md:w-3/12 w-9/12 text-[#1A4272] font-poppins md:text-5xl text-3xl font-semibold z-20">
                 Our Excellent Services
             </div>
             <div className="md:flex w-6/12 text-[#1B4C89] font-poppins md:text-lg hidden font-medium leading-9">

@@ -1,52 +1,67 @@
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
+
 import Product from "/images/productlogo.png";
 import Luminus from "/images/luminouslogo.png";
 import Umbrella from "/images/umbrellalogo.png";
 import Border from "/images/borderlogo.png";
 import Homey from "/images/homeylogo.png";
 
-const images = [Product, Luminus, Umbrella, Border, Homey];
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
-const Banner = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
+const Banner = ({ bgColor = "bg-[#90BAE9]/80", px = "10" }) => {
+  const [duration, setDuration] = useState(10); // Default duration
 
   useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
+    // Adjust duration based on screen width
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setDuration(5); // Faster animation for mobile
+      } else {
+        setDuration(10); // Default animation for larger screens
+      }
+    };
 
-    const totalWidth = container.scrollWidth / 2; // Half width since we duplicate
-    const duration = totalWidth / 150; //// Adjust speed (lower = faster)
+    handleResize(); // Set initial duration
+    window.addEventListener("resize", handleResize); // Listen for screen size changes
 
-    gsap.set(container, { x: 0 }); //Reset position to prevent jump
-
-    gsap.to(container, {
-      x: `-${totalWidth}px`, // Scroll throug half of the content
-      duration: duration, // Adjust speed dynamically
-      ease: "none",
-      repeat: -1,
-      modifiers: {
-        x: gsap.utils.wrap(0, -totalWidth), // Ensures perfect looping
-      },
-    });
+    return () => window.removeEventListener("resize", handleResize); // Cleanup
   }, []);
 
   return (
-    <section className="banner bg-[#90BAE9]/80 w-full px-10 md:py-10 py-4 overflow-hidden z-20">
-      <div ref={containerRef} className="relative w-full max-w-7xl mx-auto">
-        <div className="flex gap-4 w-max">
-          {/* Render images twice for seamless looping */}
-          {[...images, ...images, ...images ].map((src, index) => (
-            <img
-              key={index}
-              src={src}
-              alt="Brand Logo"
-              className="h-10 md:h-16 w-auto"
-              loading="lazy"
-              decoding="async"
-            />
-          ))}
-        </div>
+    <section className={`${bgColor}  px-10 md:px-${px}  font-roboto`}>
+      <div className="text-center mb-8 flex justify-start items-center gap-4">
+        <h4 className="text-lg text-left font-semibold text-[#1B4C89] mb-2">
+          OUR SUPPORTERS
+        </h4>
+        <hr className="border-2 border-[#1B4C89] w-10/12 " />
+      </div>
+      <div className="overflow-hidden relative">
+        <motion.div
+          className="flex gap-20 items-center w-max"
+          animate={{ x: ["0%", "-50%"] }} // Move halfway to create seamless effect
+          transition={{
+            repeat: Infinity,
+            duration: duration, // Dynamic duration based on screen size
+            ease: "linear",
+          }}
+        >
+          {/* Logos */}
+          <div className="flex gap-20">
+            <img src={Product} alt="Supporter 1" className="mx-auto" />
+            <img src={Luminus} alt="Supporter 2" className="mx-auto" />
+            <img src={Umbrella} alt="Supporter 3" className="mx-auto" />
+            <img src={Border} alt="Supporter 4" className="mx-auto" />
+            <img src={Homey} alt="Supporter 5" className="mx-auto" />
+          </div>
+          {/* Duplicate Logos for Seamless Scrolling */}
+          <div className="flex gap-20">
+          <img src={Product} alt="Supporter 1" className="mx-auto" />
+            <img src={Luminus} alt="Supporter 2" className="mx-auto" />
+            <img src={Umbrella} alt="Supporter 3" className="mx-auto" />
+            <img src={Border} alt="Supporter 4" className="mx-auto" />
+            <img src={Homey} alt="Supporter 5" className="mx-auto" />
+          </div>
+        </motion.div>
       </div>
     </section>
   );

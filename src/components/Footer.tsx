@@ -23,8 +23,7 @@ const Footer = () => {
             <div className="section1 flex flex-wrap gap-4">
               <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="text-lg font-normal cursor-pointer hover:text-white">Home</Link>
               <Link to="/about" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="text-lg font-normal  hover:text-white">About Us</Link>
-              <Link to="/product" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="text-lg font-normal hover:text-white">Products</Link>
-              <Link to="/pffice" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="text-lg font-normal hover:text-white">Office</Link>
+              <Link to="/product" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="text-lg font-normal hover:text-white">Projects</Link>
             </div>
 
             {/* Support Button */}
@@ -54,7 +53,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="footer-lower-left text-left md:text-left">
             <h3 className="text-3xl md:text-5xl">NIMI DEVELOPERS</h3>
-            <h2 className="text-4xl md:text-7xl">PRIVATE LIMITED</h2>
+            {/* <h2 className="text-4xl md:text-7xl">PRIVATE LIMITED</h2> */}
           </div>
 
           {/* Social Icons */}

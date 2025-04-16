@@ -42,21 +42,16 @@ const MobileNavbar = () => {
                         <Button variant="ghost" className="flex items-center gap-3 justify-start" asChild>
                             <Link to="/product" onClick={handleLinkClick}>
                                 <ShoppingCart className="w-4 h-4" />
-                                Product
+                                Projects
                             </Link>
                         </Button>
                         <Button variant="ghost" className="flex items-center gap-3 justify-start" asChild>
                             <Link to="/people" onClick={handleLinkClick}>
                                 <Users className="w-4 h-4" />
-                                People
+                                Team
                             </Link>
                         </Button>
-                        <Button variant="ghost" className="flex items-center gap-3 justify-start" asChild>
-                            <Link to="/office" onClick={handleLinkClick}>
-                                <LampDesk className="w-4 h-4" />
-                                Office
-                            </Link>
-                        </Button>
+                        
                         <Button variant="ghost" className="flex items-center gap-3 justify-start" asChild>
                             <Link to="/contact" onClick={handleLinkClick}>
                                 <Contact className="w-4 h-4" />

@@ -1,7 +1,7 @@
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import { useState, useEffect } from "react";
-import AnimatedContent from "@/ReactBit/AnimatedContent";
+// import AnimatedContent from "@/ReactBit/AnimatedContent";
 
 interface Image {
   src: string;
@@ -58,17 +58,17 @@ const Gallery: React.FC = () => {
       {/* Masonry Grid Layout */}
       <div className="columns-2 md:columns-3 lg:columns-4 gap-2 space-y-2 ">
         {images.map((image, i) => (
-          <AnimatedContent
-            key={i}
-            distance={50}
-            direction="vertical"
-            reverse={false}
-            config={{ tension: 80, friction: 20 }}
-            initialOpacity={0.2}
-            animateOpacity={loaded}
-            scale={0.8}
-            threshold={0.2}
-          >
+          // <AnimatedContent
+          //   key={i}
+          //   distance={50}
+          //   direction="vertical"
+          //   reverse={false}
+          //   config={{ tension: 80, friction: 20 }}
+          //   initialOpacity={0}
+          //   animateOpacity={loaded}
+          //   scale={0.8}
+          //   threshold={0.2}
+          // >
             <div className="relative overflow-hidden rounded-lg shadow-lg break-inside-avoid">
               <img
                 src={image?.src}
@@ -77,7 +77,7 @@ const Gallery: React.FC = () => {
                 onClick={() => setIndex(i)}
               />
             </div>
-          </AnimatedContent>
+          // </AnimatedContent>
         ))}
       </div>
 
