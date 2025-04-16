@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 import PeopleCard from "./components/PeopleCard";
 import { peopleData } from "@/utils/constant";
+import Title from "@/components/Title";
 
 const People = () => {
     
   return (
     <div className="min-h-screen bg-[#90BAE9]/80 flex flex-col justify-center p-8">
+      <Title title="Team - Nimi Developers" />
       <div className=" mx-auto text-center"><h2 className="text-4xl font-bold text-[#1D2130] mb-4">
           Our Team
         </h2>

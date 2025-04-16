@@ -2,7 +2,6 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ProductCard from "./components/ProductCard";
 import VisitingcardBanner from "@/components/VisitingcardBanner";
-import bg from "/images/Product-bg.png";
 import gradient from "/images/product-gradient.png";
 import {
   Pagination,
@@ -14,6 +13,7 @@ import {
 } from "@/components/ui/pagination";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
+import Title from "@/components/Title";
 
 const Product = () => {
     const productData = useSelector((state: RootState) => state.product.productData) as Array<{
@@ -21,7 +21,7 @@ const Product = () => {
         src: string;
         description: string;
         location: string;
-        id: number;
+        id: string;
     }>;
 
 
@@ -75,6 +75,7 @@ const Product = () => {
 
   return (
     <div className="min-h-screen bg-[#90BAE9]/80 ">
+      <Title title="Projects - Nimi Developers" />
       {/* <img src={bg} alt="Product-bg" className="relative z-20" /> */}
       <div className="absolute top-0 left-0 w-full z-0 opacity-70 md:block hidden">
         <img src={gradient} className="w-full h-[150vh]" alt="" />

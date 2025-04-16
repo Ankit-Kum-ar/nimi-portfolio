@@ -6,7 +6,7 @@ interface ProductCardProps {
   title: string;
   description: string;
   location: string;
-  id: number;
+  id: string;
   src: string;
 }
 
