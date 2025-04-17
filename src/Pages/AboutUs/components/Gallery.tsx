@@ -1,6 +1,6 @@
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 // import AnimatedContent from "@/ReactBit/AnimatedContent";
 
 interface Image {
@@ -42,12 +42,12 @@ const images: Image[] = [
 
 const Gallery: React.FC = () => {
   const [index, setIndex] = useState<number>(-1);
-  const [loaded, setLoaded] = useState<boolean>(false);
+  // const [loaded, setLoaded] = useState<boolean>(false);
 
-  useEffect(() => {
-    const timer = setTimeout(() => setLoaded(true), 1000); // Delay for animation
-    return () => clearTimeout(timer);
-  }, []);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => setLoaded(true), 1000); // Delay for animation
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   return (
     <div className="px-8 py-8 pt-16  w-full">

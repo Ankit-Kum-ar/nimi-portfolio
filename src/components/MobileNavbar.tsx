@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet"
 import { Button } from "./ui/button"
 import { useState } from "react";
-import { BookOpenText, Contact, HomeIcon, LampDesk, MenuIcon, Newspaper, ShoppingCart, Users } from "lucide-react";
+import { BookOpenText, Contact, HomeIcon, MenuIcon, Newspaper, ShoppingCart, Users } from "lucide-react";
 
 const MobileNavbar = () => {
     const [showMobileMenu, setShowMobileMenu] = useState(false);
